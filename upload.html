@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Loja de Apps</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="upload.html">Publicar App</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Publicar App</h2>
+        <form id="upload-form">
+            <label for="app-name">Nome do App:</label>
+            <input type="text" id="app-name" name="app-name" required>
+            
+            <label for="app-description">Descrição:</label>
+            <textarea id="app-description" name="app-description" required></textarea>
+            
+            <label for="app-image">Imagem do App:</label>
+            <input type="file" id="app-image" name="app-image" accept="image/*" required>
+            
+            <label for="app-apk">Arquivo APK:</label>
+            <input type="file" id="app-apk" name="app-apk" accept=".apk" required>
+            
+            <button type="submit">Publicar</button>
+        </form>
+    </main>
+    <!-- Adicionando scripts Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-storage-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCUQG2XgLFxj3GxnU05uEWZQETlZFGYEcM",
+            authDomain: "hertstore-ce1a1.firebaseapp.com",
+            projectId: "hertstore-ce1a1",
+            storageBucket: "hertstore-ce1a1.appspot.com",
+            messagingSenderId: "253763143318",
+            appId: "1:253763143318:web:cc1a7322a7a7b59e10a4b7"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
